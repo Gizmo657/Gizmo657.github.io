@@ -1,0 +1,90 @@
+<script src='code.jquery.com_jquery-3.7.1.min.js'></script>
+<style>
+div {
+background-color:gray;
+height:40px;
+}
+table, td {
+height:300px;
+width:600px;
+background-color: #E0FFFF;
+border-style: solid;
+border-width: 1px 1px 1px 1px;
+border-color: black;
+font-size:48px;
+text-align: center
+}
+input[type=button]
+{
+cursor:pointer;
+width:100px;
+height:100px;
+}
+</style>
+
+<script>
+var nomer=0;
+var heiG=40;
+var kol=0;
+function Pronom(){
+nomer=nomer+1;
+return nomer;
+};
+function OKay(){
+$('td').each(function(){
+  var a_=Pronom();
+  $(this).data("id", a_);
+});
+
+$('td').click(function(){
+var znach=Number($(this).text());
+$(this).text(znach + 1);
+$('div').append("Пользователь нажал на ячейку №"+$(this).data("id")+'</br>');
+heiG=heiG+18;
+$('div').css("height", heiG);
+});
+};
+
+$(document).ready(function(){
+OKay();
+
+$('input[type=button]').click(function(){
+   $('table').append("<tr> <td>0</td> <td>0</td> <td>0</td></tr>")
+   nomer=0;
+   $('td').off('click');
+   OKay();
+});
+
+});
+</script>
+
+<div></div></br>
+<h1>Жуков Александр Романович 21Б0161 БСБО-04-21</h1>
+<h2>Практика 3. Кликай по ноликам</h2>
+<table>
+<tr>
+ <td>0</td>
+ <td>0</td>
+ <td>0</td>
+</tr>
+<tr>
+ <td>0</td>
+ <td>0</td>
+ <td>0</td>
+</tr>
+</table>
+
+<input type="button" value="+ряд">
+
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
